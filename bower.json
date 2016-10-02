@@ -1,0 +1,18 @@
+{
+  "name": "first-project",
+  "main": "index.js",
+  "authors": [
+    "Anton Vasilev"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "3.1.1"
+  }
+}

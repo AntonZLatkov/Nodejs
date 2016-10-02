@@ -1,2 +1,1 @@
-# Nodejs
-Node js course assignments
+# nodejs-first-project

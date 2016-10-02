@@ -1,0 +1,15 @@
+{
+  "name": "first-project",
+  "engine": "6.6.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "standard": "^8.1.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "AV",
+  "license": "MIT"
+}
