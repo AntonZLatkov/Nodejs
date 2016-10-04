@@ -11,7 +11,7 @@ function getContentType (url) {
   } else if (url.endsWith('.html')) {
     contentType = 'text/html'
   } else if (url.endsWith('.jpg')) {
-    contentType = 'image/jpg'
+    contentType = 'image/jpeg'
   } else {
     contentType = ''
   }

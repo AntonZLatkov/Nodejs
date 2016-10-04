@@ -1,6 +1,9 @@
 {
   "name": "first-project",
-  "engine": "6.6.0",
+  "engines": {
+    "node": "6.6.x",
+    "npm": "3.10.x"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
