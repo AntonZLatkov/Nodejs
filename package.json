@@ -1,17 +1,25 @@
 {
-  "name": "first-project",
+  "name": "Nodejs",
   "engines": {
-    "node": "6.6.x",
+    "node": "4.4.x",
     "npm": "3.10.x"
   },
   "version": "1.0.0",
-  "description": "",
+  "description": "My test project for the Nodejs course in SoftUni",
   "main": "index.js",
   "dependencies": {
+    "multiparty": "^4.1.2",
     "standard": "^8.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntonZLatkov/Nodejs.git"
+  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node --use_strict index.js"
+  },
+  "devDependencies": {
+    "standard": "*"
   },
   "author": "AV",
   "license": "MIT"

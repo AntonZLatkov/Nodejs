@@ -8,7 +8,7 @@ let imageName = ''
 let imageURL = ''
 
 module.exports = (req, res) => {
-  checkImages = (name, url) => {
+  let checkImages = (name, url) => {
     if (name !== '' && url !== '') {
       imageList.push({
         imageName: name,
@@ -24,8 +24,6 @@ module.exports = (req, res) => {
     form.on('part', (part) => {
       if (part.filename) {
         let fileBody = new Buffer('')
-        // console.log('part: ', part)
-        // let fileBody = ''
         part.on('data', (data) => {
           fileBody = Buffer.concat([fileBody, data])
         })
@@ -48,11 +46,9 @@ module.exports = (req, res) => {
         })
         part.on('end', () => {
           imageName = body
-          // checkImages(imageName, imageURL)
         })
       }
     })
-  } else {
-    return true
   }
+  return true
 }
