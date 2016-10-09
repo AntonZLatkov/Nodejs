@@ -25,7 +25,6 @@ module.exports = (req, res) => {
         res.writeHead(404, 'Page Not Found')
         res.write('404 Page Not Found')
         res.end()
-        return true
       }
       let contentType = getContentType(req.pathName)
       res.writeHead(200, 'All good', {
@@ -33,12 +32,10 @@ module.exports = (req, res) => {
       })
       res.write(data)
       res.end()
-      return true
     })
   } else {
     res.writeHead(403, 'Restricted path/content')
     res.write('403 - Not allowed')
     res.end()
-    return true
   }
 }

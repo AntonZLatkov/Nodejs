@@ -1,4 +1,3 @@
-const fs = require('fs')
 const url = require('url')
 const buildSetImageHTML = require('../modules/buildSetImageHTML')
 

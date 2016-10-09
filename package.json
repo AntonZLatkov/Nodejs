@@ -1,7 +1,7 @@
 {
   "name": "Nodejs",
   "engines": {
-    "node": "4.4.x",
+    "node": "6.7.x",
     "npm": "3.10.x"
   },
   "version": "1.0.0",
@@ -16,7 +16,7 @@
     "url": "https://github.com/AntonZLatkov/Nodejs.git"
   },
   "scripts": {
-    "start": "node --use_strict index.js"
+    "start": "node index.js"
   },
   "devDependencies": {
     "standard": "*"

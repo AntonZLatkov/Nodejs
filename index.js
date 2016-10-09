@@ -1,5 +1,6 @@
 const http = require('http')
 const handlers = require('./handlers/index')
+const clearOldDb = require('./modules/clearOldDb')
 const port = process.env.PORT || 1337
 const environment = process.env.NODE_ENV
 
@@ -10,6 +11,7 @@ if (environment === 'production') {
 }
 
 console.log(environment, database)
+clearOldDb()
 
 const server = http
   .createServer((req, res) => {

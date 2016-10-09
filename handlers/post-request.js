@@ -5,17 +5,21 @@ const imageList = images.imageList
 const multiparty = require('multiparty')
 // const crypt = require('../modules/crypt')
 const uploadDir = '/content/images/'
+let updateDB = require('../modules/updateDB')
 let imageName = ''
+let imageCategory = ''
 let imageURL = ''
 
 module.exports = (req, res) => {
-  let checkImages = (name, url) => {
-    if (name !== '' && url !== '') {
+  let pushImageData = (name, category, url) => {
+    if (name !== '' && category !== '' && url !== '') {
       imageList.push({
         imageName: name,
+        imageCat: category,
         imageUrl: url
       })
       console.log(imageList)
+      updateDB(req, res, name, category, url)
     }
   }
   if (req.method === 'POST') {
@@ -34,7 +38,7 @@ module.exports = (req, res) => {
                 fs.writeFile('.' + uploadDir + part.filename, fileBody, 'binary', err => {
                   if (err) console.log(err)
                   imageURL = '.' + uploadDir + part.filename
-                  checkImages(imageName, imageURL)
+                  pushImageData(imageName, imageCategory, imageURL)
                   res.writeHead(200, 'Upload successful', {
                     'Content-Type': 'image/jpeg'
                   })
@@ -64,7 +68,11 @@ module.exports = (req, res) => {
           body += data
         })
         part.on('end', () => {
-          imageName = body
+          if (part.name === 'img-name') {
+            imageName = body
+          } else if (part.name === 'img-category') {
+            imageCategory = body
+          }
         })
       }
     })
